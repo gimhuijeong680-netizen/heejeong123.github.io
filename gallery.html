@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    background: #ffffff;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ─────────────────────────
+   HEADER
+──────────────────────────*/
+header {
+    width: 100%;
+    background: hsl(0, 0%, 100%);
+    border-bottom: 2px solid #f1c6d8;
+    padding: 20px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
+    color: #ff8bb3;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* 메뉴 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background: #ffd6e5;
+    transform: scale(1.1);
+}
+
+/* ─────────────────────────
+   GALLERY GRID
+──────────────────────────*/
+.gallery-container {
+    width: 80%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* 공통 박스 스타일 */
+.item {
+   
+   
+    border-radius: 18px;
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.tall-img { height: 500px; }
+.wide-desc { height:500px; }
+.small-desc { height: 220px; }
+.wide-img { height: 500px; }
+.mid-desc { height: 320px; }
+.wide-img2 { height: 350px; }
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* ─────────────────────────
+   반응형
+──────────────────────────*/
+
+/* 1) 메뉴 반응형 — 화면줄면 세로정렬 */
+@media (max-width: 900px) {
+    .nav-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 17px;
+        padding: 8px 14px;
+    }
+}
+
+/* 2) 갤러리 반응형 */
+@media (max-width: 1050px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tall-img { height: 320px; }
+    .wide-img { height: 300px; }
+    .wide-img2 { height: 300px; }
+    .mid-desc { height: 260px; }
+    .wide-desc { height: 210px; }
+    .small-desc { height: 180px; }
+}
+
+/* 3) 모바일 */
+@media (max-width: 768px) {
+    header { padding: 15px 0; }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tall-img,
+    .wide-img,
+    .wide-img2 {
+        height: 260px;
+    }
+
+    .mid-desc,
+    .wide-desc,
+    .small-desc {
+        height: auto;
+        padding: 25px;
+        font-size: 24px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+/* 4) 작은 화면 */
+@media (max-width: 450px) {
+    .item {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav-wrapper">
+       <a href="index.html" class="logo"><div class="logo"><img src="logo.png" alt="로고"></div></a>
+        <nav>
+            <ul>
+             <li><a href="AboutMe.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="funfacts.html">Fun Facts</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="gallery-container">
+
+    <div class="item wide-desc"><img src="p2.jpg" alt="그림2"></div>
+    <div class="item wide-desc">뿌끼몬🌸<br> 포켓몬에 한참 빠져 지내다 보니 자연스럽게 포켓몬과 제 캐릭터가 
+        함께 있는 장면을 그리고 싶어졌습니다. 좋아하는 포켓몬과 캐릭터가 어울리는 모습을 상상하면서 그리는 과정 
+        자체가 너무 즐거웠어요. </div>
+
+    <div class="item small-desc"><br><br><br><br>SD캐릭터 연습💓<br> 저는 평소에 SD캐릭터를 그리기 좋아해서 요번 기회에 SD 캐릭터 그림체
+    들을 연구하고 연습하여 그려보았어요. 아직 부족하지만 더 연습하여구요! 😀</div>
+     <div class="item wide-desc"><img src="p3].jpg" alt="그림3"></div>
+
+    <div class="item wide-desc"><img src="p4.jpg" alt="그림4"></div>
+    <div class="item mid-desc"><br><br><br><br>커미션 작업물🤍<br> 제가 고등학생때 친구의 제안을 받아 제 그림을 판매 해보기로 했어요! 처음엔
+    내 그림을 누가사~ 하고 있었는데 한 번 작업을 하고 난 후 그게 입소문이 타 유명한 유튜버 분들도 오게되어 지금도 그림을 판매하고있어요!</div>
+
+    <div class="item small-desc"><br><br><br><br><br><br>SD캐릭터 연습2💓<br> 두번째 와 같이 SD캐릭터를 그리는걸 연습했어요! 이번엔 두명! 
+        긴 머리도 그리고 싶고 짧은 머리도 그리고 싶어서 둘다 그려봤어요! 💛</div>
+    <div class="item wide-desc"><img src="p5.jpg" alt="그림5"></div>
+
+</main>
+
+</body>
+</html>
