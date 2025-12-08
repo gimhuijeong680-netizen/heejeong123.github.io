@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Facts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* -------------------- 기본 -------------------- */
+body {
+    margin: 0;
+    background: #fff7fa;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* -------------------- HEADER (메인 동일) -------------------- */
+header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 2px solid #f1c6d8;
+    padding: 20px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
+    color: #ff8bb3;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background: #ffd6e5;
+    transform: scale(1.1);
+}
+
+/* -------------------- 페이지 -------------------- */
+.page-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.page-title {
+    font-family: 'Gaegu', cursive;
+    font-size: 32px;
+    background: #ffe4ef;
+    padding: 12px 30px;
+    border-radius: 25px;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+/* -------------------- FUN FACT BOX -------------------- */
+.fun-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+/* 창 본체 */
+.fun-box {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 2px solid #ffb6d6;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+
+.fun-box:hover {
+    transform: scale(1.03);
+}
+
+/* 헤더 (윈도우 스타일) */
+.fun-header {
+    background: #f3a9cb;
+    padding: 10px 14px;
+    font-family: 'Gaegu', cursive;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 윈도우 버튼 3종 */
+.win-btns {
+    display: flex;
+    gap: 6px;
+}
+
+.win-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.win-close { background: #ffe0e9; }
+.win-min   { background: #ffe0e9; }
+.win-max   { background: #ffe0e9; }
+
+/* 내부 contents */
+.fun-inner {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+/* 이미지 박스 */
+.fun-img {
+    width: 130px;
+    height: 150px;
+    background: #ffffff;
+    border-radius: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* 혹시 모를 넘침 방지 */
+}
+
+/* 이미지 설정 */
+.fun-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+/* 설명 박스 */
+.fun-desc {
+    flex: 1;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+/* -------------------- 반응형 -------------------- */
+@media (max-width: 1050px) {
+    .fun-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .fun-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .fun-img {
+        width: 180px;
+        height: 200px;
+    }
+
+    .fun-desc {
+        width: 100%;
+        font-size: 15px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<!-- -------------------- HEADER -------------------- -->
+<header>
+    <div class="nav-wrapper">
+       <a href="index.html" class="logo"><div class="logo"><img src="logo.png" alt="로고"></div></a>
+        <nav>
+            <ul>
+                 <li><a href="AboutMe.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="funfacts.html">Fun Facts</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="page-wrapper">
+
+    <h1 class="page-title">My TMI</h1>
+
+    <div class="fun-grid">
+
+        <!-- 박스 1 -->
+        <div class="fun-box">
+            <div class="fun-header">
+                tmi 1
+                <div class="win-btns">
+                    <div class="win-btn win-close"></div>
+                    <div class="win-btn win-min"></div>
+                    <div class="win-btn win-max"></div>
+                </div>
+            </div>
+            <div class="fun-inner">
+                <div class="fun-img"><img src="t1.jpg" alt="1"></div>
+                <div class="fun-desc">전 변비가 있습니다. ㅠㅠ</div>
+            </div>
+        </div>
+
+        <!-- 박스 2 -->
+        <div class="fun-box">
+            <div class="fun-header">
+                tmi 2
+                <div class="win-btns">
+                    <div class="win-btn win-close"></div>
+                    <div class="win-btn win-min"></div>
+                    <div class="win-btn win-max"></div>
+                </div>
+            </div>
+            <div class="fun-inner">
+                <div class="fun-img"><img src="t2.jpg" alt="2"></div>
+                <div class="fun-desc">부산 에서 태어났습니다.</div>
+            </div>
+        </div>
+
+        <!-- 박스 3 -->
+        <div class="fun-box">
+            <div class="fun-header">
+                tmi 3
+                <div class="win-btns">
+                    <div class="win-btn win-close"></div>
+                    <div class="win-btn win-min"></div>
+                    <div class="win-btn win-max"></div>
+                </div>
+            </div>
+            <div class="fun-inner">
+               <div class="fun-img"><img src="t3.jpg" alt="3"></div>
+                <div class="fun-desc">토끼를 좋아합니다.</div>
+            </div>
+        </div>
+
+        <!-- 박스 4 -->
+        <div class="fun-box">
+            <div class="fun-header">
+                tmi 4
+                <div class="win-btns">
+                    <div class="win-btn win-close"></div>
+                    <div class="win-btn win-min"></div>
+                    <div class="win-btn win-max"></div>
+                </div>
+            </div>
+            <div class="fun-inner">
+                <div class="fun-img"><img src="t4.jpg" alt="4"></div>
+                <div class="fun-desc">똥을좋아합니다.</div>
+            </div>
+        </div>
+
+        <!-- 박스 5 -->
+        <div class="fun-box">
+            <div class="fun-header">
+                tmi 5
+                <div class="win-btns">
+                    <div class="win-btn win-close"></div>
+                    <div class="win-btn win-min"></div>
+                    <div class="win-btn win-max"></div>
+                </div>
+            </div>
+            <div class="fun-inner">
+                    <div class="fun-img"><img src="t5.jpg" alt="5"></div>
+                <div class="fun-desc">최애는 마이멜로디 입니다.</div>
+            </div>
+        </div>
+
+        <!-- 박스 6 -->
+        <div class="fun-box">
+            <div class="fun-header">
+                tmi 6
+                <div class="win-btns">
+                    <div class="win-btn win-close"></div>
+                    <div class="win-btn win-min"></div>
+                    <div class="win-btn win-max"></div>
+                </div>
+            </div>
+            <div class="fun-inner">
+                 <div class="fun-img"><img src="t6.jpg" alt="6"></div>
+                <div class="fun-desc">똥싸는걸 좋아합니다.</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
