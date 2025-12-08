@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kim Heejeong - Main</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Gaegu:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff8fa;
+            font-family: 'Nunito', sans-serif;
+            color: #444;
+        }
+
+       /* HEADER (메인과 100% 동일) */
+header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 2px solid #f1c6d8;
+    padding: 20px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
+    color: #ff8bb3;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background: #ffe1ec;
+    transform: scale(1.1);
+}
+
+
+        /* MAIN SECTION */
+        .main {
+            width: 90%;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .intro-text {
+            font-family: 'Gaegu', cursive;
+            font-size: 26px;
+            width: 55%;
+            min-width: 300px;
+        }
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 5%;
+    background: #f7f3f7;
+}
+   /* 사진 크기 키우기 */
+.photo-box {
+ margin-right: 200px; /* 오른쪽 여백 추가해서 원하는 위치로 이동 */
+    width: 300px;   /* 원하는 만큼 키워도 됨! 280, 300도 가능 */
+    height: 260px;
+    border-radius: 25px;
+    overflow: hidden;
+    flex-shrink: 0; /* 사진이 줄어들지 않게 고정 */
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+        
+
+        /* WHO I AM */
+        .who-section {
+            width: 90%;
+            margin: 60px auto;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .who-title {
+            font-family: 'Gaegu', cursive;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            margin-left: 20px;
+        }
+
+        .card-wrap {
+            display: flex;
+            gap: 40px;
+            margin-left: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 320px;
+            padding: 30px;
+            background: #ffeef6;
+            border-radius: 25px;
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.05);
+            transition: transform 0.25s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .related-btn {
+            width: 100%;
+            height: 55px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            width: 90%;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* --------------------------- */
+        /*        RESPONSIVE CSS       */
+        /* --------------------------- */
+
+        /* 태블릿 (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 15px;
+            }
+
+            .main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .intro-text {
+                width: 100%;
+            }
+
+            .photo-box {
+                width: 60%;
+                margin-top: 20px;
+            }
+
+            .card-wrap {
+                justify-content: center;
+                margin-left: 0;
+            }
+        }
+
+        /* 모바일 (max-width: 600px) */
+        @media (max-width: 600px) {
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+            }
+
+            .intro-text h1 {
+                font-size: 26px;
+            }
+
+            .intro-text p {
+                font-size: 16px;
+            }
+
+            .photo-box {
+                width: 90%;
+                height: 220px;
+            }
+
+            .card {
+    position: relative;      /* 아이콘이 카드 안에서 위치 잡을 수 있도록 */
+    width: 200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 아이콘 버튼 */
+.related-btn {
+    position: absolute;
+    top: 12px;       /* 상단 여백 */
+    right: 12px;     /* 우측 여백 */
+}
+
+.related-btn img {
+    width: 28px;     /* 아이콘 크기 줄여주기 */
+    height: 28px;
+    object-fit: contain;
+    display: block;
+}
+            .who-title {
+                font-size: 26px;
+                text-align: center;
+                margin-left: 0;
+            }
+
+            footer {
+                font-size: 16px;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-wrapper">
+            <a href="#top" class="logo"><div class="logo"><img src="logo.png" alt="로고"></div></a>
+            <nav>
+                <ul>
+                  <li><a href="AboutMe.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="funfacts.html">Fun Facts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main" id="top">
+        <div class="intro-text">
+            <h2>Hello!</h2>
+            <h1>I'm Kim Heejeong🌸</h1>
+            <p>Welcome to my own space where I love to create!</p>
+        </div>
+
+        <div class="photo-box"><img src="img1.jpeg" alt="내사진"></div>
+    </section>
+
+    <section class="who-section">
+        <div class="who-title">Who I am❓</div>
+
+        <div class="card-wrap">
+
+            <div class="card">
+                <div class="card-title">Draw a picture</div>
+                <div class="related-btn"><img src="icon1.png" alt="아이콘1"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">I like writing a diary</div>
+                <div class="related-btn"><img src="icon2.png" alt="아이콘2"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Save my work</div>
+                <div class="related-btn"><img src="icon3.png" alt="아이콘3"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <img src="instar.png" alt="인스타">@hee_j66&nbsp; &nbsp; &nbsp; |
+         &nbsp; &nbsp; &nbsp;    <img src="talk.png" alt="카카오톡"> hee1234j &nbsp; &nbsp; &nbsp; 
+         | &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; <img src="email.png" alt="이메일">@gimhuijeong680@gmail.com
+    </footer>
+
+</body>
+</html>
