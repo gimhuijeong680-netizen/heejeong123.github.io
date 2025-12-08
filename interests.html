@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #ffeef7;
+}
+
+/* ───────────── HEADER ───────────── */
+header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 2px solid #f1c6d8;
+    padding: 20px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
+    color: #ff8bb3;
+    text-decoration: none;
+}
+
+/* 메뉴 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background: #ffd6e5;
+    transform: scale(1.1);
+}
+
+
+/* ───────────── 페이지 전체 ───────────── */
+.page-wrapper {
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* 섹션 제목 */
+.section-title {
+    font-family: 'Gaegu', cursive;
+    font-size: 28px;
+    background: #ffe4ef;
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin: 40px 0 20px;
+    width: fit-content;
+}
+
+/* ───────────── 카드 공통 (애니/음악) ───────────── */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.anime-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.2s;
+}
+
+.anime-card:hover {
+    transform: scale(1.03);
+}
+
+.anime-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 18px;
+    background: #e6e6e6;
+    overflow: hidden;      /* 🔥 이것 때문에 사진이 박스 밖으로 못 나가! */
+}
+
+.anime-img img {
+    width: 100%;
+    height: 200;
+    object-fit: cover;    /* 🔥 박스 크기에 꽉 맞게 잘 자르면서 맞춰줌 */
+    display: block;
+}
+
+.anime-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px 0 4px;
+}
+
+.anime-desc {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ───────────── 추천책 BOX ───────────── */
+.book-box {
+    display: flex;
+    gap: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.book-img {
+    width: 120px;
+    height: 150px;
+    background: #e6e6e6;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;  /* 🔥 이미지 넘침 방지 */
+}
+
+.book-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 비율 유지하며 꽉 채우기 */
+    border-radius: 10px;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-title {
+    font-size: 20px;
+    font-family: 'Gaegu', cursive;
+    background: #ffe4ef;
+    padding: 6px 18px;
+    width: fit-content;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.book-desc {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+/* ───────────── 반응형 ───────────── */
+
+/* 태블릿 */
+@media (max-width: 1050px) {
+    .anime-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-box {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        padding: 8px 20px;
+    }
+
+    .anime-img {
+        height: 160px;
+    }
+}
+
+/* 아주 작은 화면 */
+@media (max-width: 450px) {
+    .anime-title {
+        font-size: 18px;
+    }
+    .book-title {
+        font-size: 18px;
+    }
+}
+/* ───────────── 반응형 메뉴 (메인과 동일) ───────────── */
+
+@media (max-width: 850px) {
+    nav ul {
+        flex-direction: column;        /* 메뉴 세로로 */
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 17px;
+    }
+
+    .nav-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="nav-wrapper">
+        <a href="index.html" class="logo"><div class="logo"><img src="logo.png" alt="로고"></div></a>
+        <nav>
+            <ul>
+                 <li><a href="AboutMe.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="funfacts.html">Fun Facts</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="page-wrapper">
+
+    <h2 class="section-title">애니메이션</h2>
+
+    <div class="anime-grid">
+        <div class="anime-card">
+            <div class="anime-img"><img src="a1.jpg" alt="애니메이션1"></div>
+            <p class="anime-title">가치아쿠타</p>
+            <p class="anime-desc">물건에게 생명을 주고 힘을 이끌어내는 능력을 발현한다. 모든 것은 ‘빌어먹을 세상’을 바꾸기 위해―!!</p>
+        </div>
+
+        <div class="anime-card">
+            <div class="anime-img"><img src="a2.jpg" alt="애니메이션2"></div>
+            <p class="anime-title">헌터X헌터</p>
+            <p class="anime-desc">'미지'라는 말이 뿜어내는 마력. 그 힘에 매료된 자들이 있다.
+사람들은 그들을 일컬어 '헌터'라고 부른다.</p>
+        </div>
+
+        <div class="anime-card">
+            <div class="anime-img"><img src="a3.jpg" alt="애니메이션3"></div>
+            <p class="anime-title">하트캐치 프리큐어!</p>
+            <p class="anime-desc">모두의 마음에 꽃을 피웁니다 하트캐치 프리큐어 등장!</p>
+        </div>
+
+        <div class="anime-card">
+            <div class="anime-img"><img src="a4.jpg" alt="애니메이션4"></div>
+            <p class="anime-title">란마 1/2</p>
+            <p class="anime-desc">중국에서 무술 수행을 마치고 돌아온 사오토메 부자. 하지만, 
+                얹혀살게 될 텐도 소운의 도장에 나타난 건, 거대한 판다와 란마라고 불리는 어여쁜 소녀!!</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">음악 장르</h2>
+
+    <div class="anime-grid">
+        <div class="anime-card">
+            <div class="anime-img"><img src="m4.jpg" alt="음악1"></div>
+            <p class="anime-title">Rock</p>
+            <p class="anime-desc">밴드 사운드,락/하드락/팝락 </p>
+        </div>
+
+        <div class="anime-card">
+           <div class="anime-img"><img src="m2.jpg" alt="음악2"></div>
+            <p class="anime-title">J-Pop</p>
+            <p class="anime-desc">애니 좋아하면 빼먹을수 없음</p>
+        </div>
+
+        <div class="anime-card">
+            <div class="anime-img"><img src="m1.jpg" alt="음악3"></div>
+            <p class="anime-title">Pop</p>
+            <p class="anime-desc">아이돌 음악, 유명 가수 음악 포함밝고 귀여운 느낌</p>
+        </div>
+
+        <div class="anime-card">
+             <div class="anime-img"><img src="m3.jpg" alt="음악4"></div>
+            <p class="anime-title">Heavy Metal</p>
+            <p class="anime-desc">왜곡된 기타(디스토션), 빠른 드럼, 묵직한 베이스</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">추천책</h2>
+
+    <div class="book-box">
+        <div class="book-img"><img src="b1.jpeg" alt="책1"></div>
+        <div class="book-info">
+            <p class="book-title">곰돌이 푸, 행복한 일은 매일 있어</p>
+            <p class="book-desc">바쁜 일상 속 잊기 쉬운 작은 행복을 푸의 따뜻한 시선으로 담은 위로 에세이.
+힘들 때 천천히 읽으면 마음이 느슨해지고, 스스로를 다정하게 돌보게 만든다.
+하루 중 잠깐이라도 행복을 찾는 연습을 도와주는 힐링 메시지 가득한 책.</p>
+        </div>
+    </div>
+
+    <div class="book-box">
+         <div class="book-img"><img src="b2.jpg" alt="책2"></div>
+        <div class="book-info">
+            <p class="book-title">꿈꾸는 다락방</p>
+            <p class="book-desc">원하는 미래를 그림처럼 생생하게 떠올리면 현실이 달라진다는 ‘생각의 힘’을 이야기하는 책.
+성공한 사람들의 공통점인 ‘꿈을 시각화하는 법’을 쉽게 풀어내며 동기부여를 준다.
+읽고 나면 자연스럽게 자신의 꿈과 목표를 다시 정리하게 되는 자기계발서.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
