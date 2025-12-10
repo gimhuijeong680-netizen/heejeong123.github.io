@@ -168,47 +168,102 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
-/* -------------------- 반응형 -------------------- */
-@media (max-width: 1050px) {
-    .fun-grid {
-        grid-template-columns: 1fr;
-    }
+/* --------------------------- */
+        /*        RESPONSIVE CSS       */
+        /* --------------------------- */
+
+        /* 태블릿 (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 15px;
+            }
+
+            .main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .intro-text {
+                width: 100%;
+            }
+
+            .photo-box {
+                width: 60%;
+                margin-top: 20px;
+            }
+
+            .card-wrap {
+                justify-content: center;
+                margin-left: 0;
+            }
+        }
+
+        /* 모바일 (max-width: 600px) */
+        @media (max-width: 600px) {
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+            }
+
+            .intro-text h1 {
+                font-size: 26px;
+            }
+
+            .intro-text p {
+                font-size: 16px;
+            }
+
+            .photo-box {
+                width: 90%;
+                height: 220px;
+            }
+        }
+
+            .card {
+    position: relative;      /* 아이콘이 카드 안에서 위치 잡을 수 있도록 */
+    width: 200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 768px) {
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
+/* 아이콘 버튼 */
+.related-btn {
+    position: absolute;
+    top: 12px;       /* 상단 여백 */
+    right: 12px;     /* 우측 여백 */
+}
 
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    .fun-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .fun-img {
-        width: 180px;
-        height: 200px;
-    }
-
-    .fun-desc {
-        width: 100%;
-        font-size: 15px;
-    }
+.related-btn img {
+    width: 28px;     /* 아이콘 크기 줄여주기 */
+    height: 28px;
+    object-fit: contain;
+    display: block;
 }
 </style>
 
 </head>
 <body>
 
-<!-- -------------------- HEADER -------------------- -->
+<!-- -------------------- HEADER -------------------- --!>
 <header>
     <div class="nav-wrapper">
        <a href="index.html" class="logo"><div class="logo"><img src="logo.png" alt="로고"></div></a>
